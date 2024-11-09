@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Demo Portfolio</title>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="css/style.css"> 
+</head>
+
+<body>
+
+    <nav>
+        <ul id='navbar'>
+            <li><a href="#welcome-section">Обо мне</a></li>
+            <li><a href="#projects">Мои фоточки</a></li>
+            <li><a href="#contact">Контакты</a></li>
+        </ul>
+    </nav>
+
+    <div id="welcome-section" class="intro"> 
+        <h1>Привет, я Юля</h1>
+        <p> Мне 22 года. Я увлекаюсь искусством, люблю рисовать. </p>
+    </div>
+    
+    <div id="projects" class="work">
+        <h2 class="work-header">Посмотри мои фотографии!</h2>
+        
+        <div class="project-container">
+            </div>
+       
+    </div>
+    
+    <div id="contact" class="contact">
+        <div class="header">
+            <h1>Давай дружить!</h1>
+            <p>Расскажи о себе, мне очень интересно</p>
+        </div>
+        <a href="https://vk.com/neosurrealismm" target="_blank" class="contact-details">ВК</a>
+        <a id="profile-link" href="https://github.com/YKDubrovina" target="_blank" class="contact-details">GitHub</a>
+        <a href="https://t.me/neosurrealism" target="_blank" class="contact-details">Telegram</a>
+    
+    </div>
+    
+    
+    <footer>
+        Это просто сайт обо мне...
+        <p>&copy; Создано <a href="https://vk.com/neosurrealismm" target="_blank">Юлей</a></p>
+    </footer>
+    
+    <script>
+        const projectContainer = document.querySelector('.project-container');
+
+        const images = [
+            { src: 'images/projectbg1.png', title: 'Я дома' },
+            { src: 'images/projectbg2.png', title: 'Я и мой парень Кирилл' },
+            { src: 'images/projectbg3.png', title: 'Я типа красивая' },
+            { src: 'images/projectbg4.png', title: 'Моя кошечка Пичи' },
+            { src: 'images/projectbg5.png', title: 'Я загадочная' },
+            { src: 'images/projectbg6.png', title: 'Я и моя сестра Лиза' }
+        ];
+
+        let currentIndex = 0;
+
+        function showNextProject() {
+            const project = images[currentIndex];
+            const projectElement = document.createElement('a');
+            projectElement.classList.add('project', 'project-tile');
+            projectElement.href = ''; // Добавьте ссылку, если нужно
+
+            const img = document.createElement('img');
+            img.classList.add('project-pic');
+            img.src = project.src;
+            img.alt = 'project';
+
+            const title = document.createElement('div');
+            title.classList.add('project-title');
+            title.textContent = project.title;
+
+            projectElement.appendChild(img);
+            projectElement.appendChild(title);
+            projectContainer.appendChild(projectElement);
+
+            currentIndex = (currentIndex + 1) % images.length; // Переключение на следующее изображение
+        }
+
+        // Вызываем функцию для показа первого изображения
+        showNextProject();
+
+        // Запускаем показ следующих изображений через 2 секунды
+        setInterval(showNextProject, 2000); 
+
+        // ----------------------------------------------------
+        // Обработчик прокрутки (добавьте его после setInterval)
+        // ----------------------------------------------------
+        window.addEventListener('scroll', function() {
+            const projects = document.querySelectorAll('.project-tile');
+            const windowHeight = window.innerHeight;
+            const scrollPosition = window.scrollY;
+            
+            projects.forEach(project => {
+                const projectTop = project.offsetTop;
+                const projectBottom = projectTop + project.offsetHeight;
+                
+                // Check if project is in view
+                if (projectTop < scrollPosition + windowHeight && projectBottom > scrollPosition) {
+                    project.classList.add('in-view');
+                } else {
+                    project.classList.remove('in-view');
+                }
+            });
+        }); 
+    </script>
+</body>
+</html>

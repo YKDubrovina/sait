@@ -1,0 +1,222 @@
+/**
+
+ **/
+
+html,
+body {
+  font-family: 'Open Sans', sans-serif;/*Свойство font-family устанавливает стиль шрифта таким, чтобы он открывался без*/
+  text-align: center;                   /* свойство text-align выравнивает текст по центру*/
+  background-image: url("https://img.freepik.com/free-vector/watercolor-alcohol-ink-background_23-2149076318.jpg?t=st=1731133893~exp=1731137493~hmac=77d5badf3af19dbb5a54cbac60c0abe8157bb4eaf02c62dbea71501c2fb11e1a&w=1060");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+
+.project-tile {
+  opacity: 0;
+  transform: translateY(20px); /* Добавьте начальный сдвиг */
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out; /* Добавьте плавную анимацию */
+}
+
+.project-tile.in-view {
+  opacity: 1;
+  transform: translateY(0); /* Сбросьте сдвиг */
+}
+.intro {
+  top: 0;       /*Установите верхний край позиционируемого элемента*/
+                /* 
+  background: #e0ebe8;/*Свойство background задает все свойства фона сразу, здесь задается только цвет
+                        таким образом, цвет фона устанавливается равным шестнадцатеричному*/
+  min-height: 55vh;/*минимальная высота устанавливает минимальную высоту равной 5vh*/
+                    /*vh означает 55% высоты окна просмотра*/
+  padding-top: 45vh;/*Добавляет отступ в размере 45% от высоты окна просмотра к верхней части*/
+}
+
+.intro p {
+  color: rgb(197, 115, 164);
+}
+
+nav ul {
+  text-align: right;
+  position: fixed;/*свойство position устанавливает положение относительно видового экрана, 
+                  это означает, что он всегда остается на одном и том же месте, даже если страница прокручивается.*/
+  width: 100%;  /*свойство width устанавливает ширину равной 100% от размера содержащего блока*/
+  background-color: #902a5d;
+}
+
+nav ul li {
+  display: inline-block;/*свойство display определяет поведение отображения (тип окна отображения) элемента.*/
+                        /*встроенный блок позволяет задать ширину и высоту элемента при соблюдении верхнего и нижнего полей/отступов*/
+  margin: 55px;
+  margin-bottom: 15px;
+  margin-top: 25px;
+  
+}
+
+nav ul li a {
+  color: #f6deed;
+  text-decoration: none;/*оформление текста определяет оформление, добавляемое к тексту*/
+                        /*это может быть описано как тип линии (подчеркивание, наложение, сквозная линия), цвет и стиль (сплошная, волнистая, пунктирная, пунктирно-штриховая, двойная).*/
+}
+
+nav ul li a:hover {/*селектор наведения курсора используется для выбора элементов при наведении на них курсора мыши */
+  color: black;
+}*
+
+.work {
+  padding-top: 60px;
+  margin-top: -60px;
+}
+
+.work .work-header {
+  margin-top: 50px;
+  color: #df53ac;
+  font-weight: normal;
+}
+
+.project {
+  text-decoration: none;
+  color: #660139;
+  display: inline-block;
+  overflow: hidden;
+  border: 2px solid rgb(225, 147, 190);
+  height: 220px;
+  width: 280px;
+  margin: 40px 100px;
+     background: url(https://pibig.info/uploads/posts/2023-11/1698994582_pibig-info-p-svetlo-rozovii-fon-gradient-krasivo-43.png) repeat; */
+}
+.project {
+  display: block; /* Чтобы ссылка занимала весь блок */
+  margin: 10px; /* Отступы для изображений */
+}
+
+.project-tile {
+  width: 200px; /* Ширина изображений */
+  height: 150px; /* Высота изображений */
+  border: 1px solid #ccc; /* Рамка */
+  opacity: 0;
+  transform: translateY(20px); /* Добавьте начальный сдвиг */
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out; /* Добавьте плавную анимацию */
+}
+
+.project-tile.in-view {
+  opacity: 1;
+  transform: translateY(0); /* Сбросьте сдвиг */
+}
+
+.project-pic {
+  width: 100%; /* Занимает всю ширину блока */
+  height: auto; /* Подстраивает высоту по ширине */
+}
+
+.project-title {
+  text-align: center; /* Заголовок по центру */
+  font-weight: bold; /* Жирный шрифт */
+}
+
+.project-pic {
+  width: 100%;
+  height: 180px;
+  border-bottom: 2px solid rgb(238, 199, 219);
+}
+
+.project-title {
+  font-weight: bold;
+}
+
+.show-all {
+  text-decoration: none;
+  display: block;         /*атрибут block отображает элемент как блочный элемент */
+                          /*Он начинается с новой строки и занимает всю ширину */
+  width: 200px;           /*ширина задает ширину элемента */
+  height: 30px;           /*высота задает высоту элемента */
+  margin: 20px auto 90px; /*margin задает поле для верхней, правой, нижней и левой частей элемента соответственно*/
+                          /*здесь auto указывает браузеру автоматически определять левое и правое поля самостоятельно,
+                           что он и делает, устанавливая их поровну */
+  background: #ebe0e7;
+  color: #800042;
+  font-weight: bold;        /*размер шрифта определяет, насколько толстыми или тонкими должны быть символы в тексте */
+  font-size: 1em;           /*размер шрифта задает размер шрифта */
+  border: 2px solid #c690a5;/*свойство border позволяет задать стиль, ширину и цвет границы элемента */
+  border-radius: 4px;       /* он определяет радиус углов элемента и используется для добавления закругленных углов к границам*/
+  cursor: pointer;          /*определяет курсор мыши, который будет отображаться при наведении курсора мыши на элемент*/
+                            /*указатель указывает, что курсор является указателем и указывает на ссылку*/
+  padding-top: 10px;
+}
+
+.show-all:hover {
+  background: #fee4f5;
+  color: rgb(128, 0, 55);
+}
+
+@media only screen and (max-width: 500px) {
+  nav ul {
+    text-align: center;
+  }
+
+  nav ul li {
+    margin: 20px;
+  }
+
+  .project {
+    margin: 40px 0;
+  }
+}
+.contact {
+  /*   height:800px; */
+  /*   min-height:800px; */
+  background: #f7c5dc;
+  padding-bottom: 160px;
+}
+
+.header {
+  padding: 160px 0 110px; /*3 значения указывают на заполнение верхней, правой и нижней частей элемента*/
+}
+
+.contact-details {
+  display: inline-block;
+  font-weight: bold;
+  margin: 0 35px 45px 35px;
+  list-style-type: none;      /*"list-style-type"определяет тип маркера элемента списка в списке (круг, квадрат, диск и т.д)
+                              нет означает, что маркер не отображается*/
+  border: 2px solid #c690ae;
+  border-radius: 100%;
+  width: 100px;
+  height: 100px;
+  line-height: 100px;         /* свойство line-height задает объем пространства, используемого для строк, например, в тексте */
+  background: #ebe0e6;
+  color: #80003a;
+  text-decoration: none;
+}
+
+.contact-details:hover {    /* Переключатель :hover используется для выбора элементов при наведении на них курсора мыши. */
+  background: #fee4f3;
+  color: rgb(128, 0, 77);
+}
+
+footer {
+  padding: 20px;
+  background: #3f2230;
+  color: white;
+  line-height: 40px;
+}
+
+footer a {
+  color: white;
+}
+
+/*Правило @media используется в медиазапросах для применения различных стилей для различных типов носителей /устройств
+, таких как ширина и высота экрана просмотра или устройства, разрешение и т.д*/
+@media only screen and (max-width: 367px) {/*тип носителя, "экран" означает, что он используется для экранов компьютеров, планшетов, смартфонов и т.д.*/
+  /*    #contact{
+    min-height:1100px; 
+  } */
+  .contact-details {
+    border: 2px solid #c690bd;
+    border-radius: 0;
+    width: 90px;
+    height: 20px;
+    padding: 10px;
+    line-height: normal;/*Он определяет нормальную высоту линии. Это значение данного свойства используется по умолчанию */
+  }
+}
